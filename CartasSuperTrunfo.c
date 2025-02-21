@@ -49,15 +49,17 @@ void exibirCarta(Carta carta, int numero) {
 }
 
 void compararCartas(Carta carta1, Carta carta2) {
-    printf("\nComparação das Cartas:\n");
+    printf("\nComparação das Cartas (Atributo: População):\n");
+    printf("População da Carta 1: %lu\n", carta1.populacao);
+    printf("População da Carta 2: %lu\n", carta2.populacao);
 
-    printf("População: Carta %d ganhou\n", carta1.populacao > carta2.populacao ? 1 : 2);
-    printf("Área: Carta %d ganhou\n", carta1.area > carta2.area ? 1 : 2);
-    printf("PIB: Carta %d ganhou\n", carta1.pib > carta2.pib ? 1 : 2);
-    printf("Número de Pontos Turísticos: Carta %d ganhou\n", carta1.pontosTuristicos > carta2.pontosTuristicos ? 1 : 2);
-    printf("Densidade Populacional: Carta %d ganhou\n", carta1.densidadePopulacional < carta2.densidadePopulacional ? 1 : 2);
-    printf("PIB per Capita: Carta %d ganhou\n", carta1.pibPerCapita > carta2.pibPerCapita ? 1 : 2);
-    printf("Super Poder: Carta %d ganhou\n", carta1.superPoder > carta2.superPoder ? 1 : 2);
+    if (carta1.populacao > carta2.populacao) {
+        printf("Carta 1 venceu!\n");
+    } else if (carta1.populacao < carta2.populacao) {
+        printf("Carta 2 venceu!\n");
+    } else {
+        printf("Empate!\n");
+    }
 }
 
 int main() {
